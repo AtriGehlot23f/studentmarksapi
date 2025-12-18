@@ -5,7 +5,6 @@ from pathlib import Path
 
 app = FastAPI()
 
-# Allow CORS from all origins
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -13,7 +12,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Load the student data
 with open("q-vercel-python.json") as f:
     data = json.load(f)
 
